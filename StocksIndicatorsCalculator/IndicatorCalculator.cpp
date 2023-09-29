@@ -3,12 +3,19 @@
 #include <iostream>
 #include <sstream>
 
+/// @brief Check if a string is a double
+/// @param s - the string to check
+/// @return - true if the string is a double, false otherwise
 bool IndicatorCalculator::isDouble(const std::string& s) {
 	char* end = nullptr;
 	double val = strtod(s.c_str(), &end);
 	return end != s.c_str() && *end == '\0' && val != HUGE_VAL;
 }
 
+/// @brief Calculates the TDA (Ten Day Average) indicator
+/// @param quotes - the quotes of the stock
+/// @param indicators - the indicators of the stock
+/// @param stockSymbol - the symbol of the stock
 void IndicatorCalculator::CalculateTDA(std::vector<Quote>& quotes, Indicators& indicators, const std::string stockSymbol) {
 	double tda;
 	char div = ',';

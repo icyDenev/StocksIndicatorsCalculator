@@ -2,12 +2,14 @@
 #include <vector>
 #include <string>
 
+/// @brief Indicators of a stock
 struct Indicators
 {
 	std::string symbol;
 	std::vector<long double> tda; // 10-day average
 };
 
+/// @brief Quote of a stock
 struct Quote
 {
 	long double open;
@@ -17,6 +19,7 @@ struct Quote
 	long double volume;
 };
 
+/// @brief Indicator calculator
 class IndicatorCalculator
 {
 	private:
